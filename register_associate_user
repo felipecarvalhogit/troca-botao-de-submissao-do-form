@@ -1,0 +1,23 @@
+/* Desenvolvido por Felipe Carvalho + chatGPT 
+* HOOK
+*/
+
+add_action('wp_ajax_register_associate_user', 'register_associate_user');
+add_action('wp_ajax_nopriv_register_associate_user', 'register_associate_user');
+
+function register_associate_user() {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $user_id = wp_create_user($username, $password, $email);
+    if (is_wp_error($user_id)) {
+        wp_send_json_error($user_id->get_error_message());
+    } else {
+        wp_update_user(array(
+            'ID' => $user_id,
+            'role' => 'associate'
+        ));
+        wp_send_json_success();
+    }
+}
