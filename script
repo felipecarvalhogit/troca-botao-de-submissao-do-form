@@ -1,0 +1,24 @@
+/* Desenvolvido por Felipe Carvalho + chatGPT */
+
+<script>
+
+jQuery(submitButton).click(function(event){
+    event.preventDefault();
+    var data = {
+        action: 'register_associate_user',
+        username: jQuery(usernameField).val(),
+        email: jQuery(emailField).val(),
+        password: jQuery(passwordField).val()
+    };
+    jQuery.post(ajaxurl, data, function(response) {
+        if (response.success) {
+            // Registro bem-sucedido
+            // Redirecionar para a página de login ou outra página
+        } else {
+            // Registro falhou
+            // Exibir mensagem de erro
+        }
+    });
+});
+
+</script>
