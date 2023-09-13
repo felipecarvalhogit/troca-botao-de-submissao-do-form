@@ -15,3 +15,4 @@ Exemplo de rota: wwww/wp-content/nome-do-tema-filho/functions.php
 - Você precisará substituir submitButton, usernameField, emailField e passwordField pelos seletores apropriados para esses elementos em sua página.
 
 - Além disso, você precisará adicionar o código AJAX ao arquivo functions.php do seu tema WordPress para registrar a ação AJAX que cria o novo usuário.
+
